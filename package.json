@@ -1,0 +1,31 @@
+{
+  "name": "lokeshvartex-server",
+  "version": "1.0.0",
+  "description": "server code for lokeshvar tex webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avis17/lokeshvartex-server.git"
+  },
+  "author": "kuat technologies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avis17/lokeshvartex-server/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.0",
+    "nodemailer": "^6.6.3",
+    "pug": "^3.0.2",
+    "razorpay": "^2.0.6",
+    "shortid": "^2.2.16"
+  },
+  "homepage": "https://github.com/Avis17/lokeshvartex-server#readme"
+}
