@@ -57,7 +57,7 @@ let update = (collectionName, query, udpateData) => {
 let deleteItem = (collectionName, query) => {
   return new Promise((resolve, reject) => {
     let collection = db.collection(collectionName);
-    collection.deleteOne(query, (err, result) => {
+    collection.deleteOne({"_id":new ObjectId(query)}, (err, result) => {
       if (err) return reject(err);
       return resolve(result);
     });
