@@ -59,6 +59,42 @@ module.exports = function(app) {
           .send(error);
         });
       }),
+      app.post("/api/web/addinvoice", function (req, res){
+        let collectionName = req.body.collectionName;
+        let reqdata = req.body.reqdata;
+        mongodb.insert(collectionName,reqdata).then(async (result) => {
+          mongodb.query('totalamount',{}).then(async (ress) => {
+            var totalamount = Math.round(Number(ress[0].amount) + Number(reqdata.finalTotal));
+            mongodb.update('totalamount','616fdf4ae0a8b6677ab90b70',{amount:totalamount}).then(async (ress1) => {
+              res.send({
+                status: 200,
+                data:
+                  "new data is addded successfully for " + collectionName,
+              });
+              return;
+            }, async (error) => {
+              res
+              .status(500)
+              .send(error);
+            });
+          }, async (error) => {
+            res
+            .status(500)
+            .send(error);
+          });
+        }, async (error) => {
+          res
+          .status(500)
+          .send({
+            data: error.msg,
+            error: error.err,
+          });
+        });
+
+       
+      
+
+      }),
       app.post("/api/web/addcustomer", function (req, res){
         let collectionName = req.body.collectionName;
         let reqdata = req.body.reqdata
