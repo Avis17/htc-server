@@ -95,6 +95,18 @@ module.exports = function(app) {
       
 
       }),
+      app.post("/api/web/getinvoices", function (req, res){
+        let collectionName = req.body.collectionName;
+        let reqdata = req.body.query;
+        mongodb.query(collectionName,reqdata).then(async (result) => {
+          res.status(200).send(result);
+          return;
+        }, async (error) => {
+          res
+          .status(500)
+          .send(error);
+        });
+      }),
       app.post("/api/web/addcustomer", function (req, res){
         let collectionName = req.body.collectionName;
         let reqdata = req.body.reqdata
