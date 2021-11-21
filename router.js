@@ -107,6 +107,18 @@ module.exports = function(app) {
           .send(error);
         });
       }),
+      app.post("/api/web/deleteinvoice", function (req, res){
+        let collectionName = req.body.collectionName;
+        let reqdata = req.body.query;
+        mongodb.deleteItem(collectionName,reqdata).then(async (result) => {
+          res.status(200).send({result:result, status:200});
+          return;
+        }, async (error) => {
+          res
+          .status(500)
+          .send(error);
+        });
+      })
       app.post("/api/web/addcustomer", function (req, res){
         let collectionName = req.body.collectionName;
         let reqdata = req.body.reqdata
