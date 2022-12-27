@@ -1,20 +1,14 @@
 {
-  "name": "lokeshvartex-server",
+  "name": "htc-server",
   "version": "1.0.0",
-  "description": "server code for lokeshvar tex webapp",
+  "description": "server code for Hi-Tech city app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Avis17/lokeshvartex-server.git"
-  },
-  "author": "kuat technologies",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Avis17/lokeshvartex-server/issues"
+    "url": "git+https://github.com/Avis17/htc-server.git"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -23,10 +17,12 @@
     "crypto-js": "^4.1.1",
     "express": "^4.17.1",
     "mongodb": "^4.1.0",
-    "nodemailer": "^6.6.3",
-    "pug": "^3.0.2",
-    "razorpay": "^2.0.6",
-    "shortid": "^2.2.16"
+    "nodemailer": "^6.6.3"
   },
-  "homepage": "https://github.com/Avis17/lokeshvartex-server#readme"
+  "author": "siva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avis17/htc-server/issues"
+  },
+  "homepage": "https://github.com/Avis17/htc-server#readme"
 }

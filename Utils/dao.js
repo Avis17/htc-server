@@ -1,8 +1,9 @@
 const Mongo = require("mongodb");
 const { MongoClient, ObjectId } = Mongo;
-// var url = "mongodb://localhost:27017";
+var uri = "mongodb://localhost:27017";
 var db;
-const uri = "mongodb+srv://lokeshvar:lokeshvar2021@cluster0.svnzw.mongodb.net/lokeshvartex?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://lokeshvar:lokeshvar2021@cluster0.svnzw.mongodb.net/hitech-city?retryWrites=true&w=majority";
+
 let connect = () => {
   return new Promise((resolve, reject) => {
     try{
@@ -11,8 +12,8 @@ let connect = () => {
         { useUnifiedTopology: true, useNewUrlParser: true },
         function (err, dbInstance) {
           if (err) return reject(err);
-          db = dbInstance.db("lokeshvartex");
-          return resolve("lokeshvartex");
+          db = dbInstance.db("hitech-city");
+          return resolve("hitech-city");
         }
       );
     }catch (error) {
@@ -54,17 +55,6 @@ let update = (collectionName, query, udpateData) => {
   });
 };
 
-let updateInvoice = (collectionName, udpateData) => {
-  return new Promise((resolve, reject) => {
-    let collection = db.collection(collectionName);
-    // console.log("coming");
-    collection.updateOne({name:'invoice'}, {$set:udpateData}, (err, result) => {
-      // console.log(err, result);
-      if (err) return reject(err);
-      return resolve(result);
-    });
-  });
-};
 
 let deleteItem = (collectionName, query) => {
   return new Promise((resolve, reject) => {
@@ -81,7 +71,8 @@ let login = (collectionName, data) => {
     try {
       MongoClient.connect(uri, function (dberr, db) {
         if (dberr) throw dberr;
-        var dbo = db.db("lokeshvartex");
+        var dbo = db.db("hitech-city");
+        console.log(data)
         let collection = dbo.collection(collectionName);
         collection.findOne(data)
         .then(result => {
@@ -105,6 +96,5 @@ module.exports = {
   update,
   deleteItem,
   login,
-  updateInvoice,
   ObjectId,
 };

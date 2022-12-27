@@ -14,7 +14,7 @@ var bodyParser = require('body-parser');
 const path = require('path');
 
 // const hostname = '127.0.0.1'
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 const app = express();
 
 // Express Middlewares
