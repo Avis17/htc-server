@@ -35,6 +35,22 @@ module.exports = function(app) {
           });
         });
       })
+      app.post("/api/web/getusers", function (req, res){
+        let collectionName = req.body.collectionName;
+        let reqdata = req.body.query;
+        mongodb.query(collectionName,reqdata).then(async (result) => {
+          result = result.map((data)=>{
+            delete data.password
+            return data
+          })
+          res.status(200).send({status : 200, data : result});
+          return;
+        }, async (error) => {
+          res
+          .status(500)
+          .send(error);
+        });
+      })
 }
 
 

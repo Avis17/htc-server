@@ -1,8 +1,8 @@
 const Mongo = require("mongodb");
 const { MongoClient, ObjectId } = Mongo;
-var uri = "mongodb://localhost:27017";
+// var uri = "mongodb://localhost:27017";
 var db;
-// const uri = "mongodb+srv://lokeshvar:lokeshvar2021@cluster0.svnzw.mongodb.net/hitech-city?retryWrites=true&w=majority";
+const uri = "mongodb+srv://hitechcity:hitechcitymembers@cluster0.plfcxyz.mongodb.net/?retryWrites=true&w=majority";
 
 let connect = () => {
   return new Promise((resolve, reject) => {

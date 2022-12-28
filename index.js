@@ -18,7 +18,9 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 // Express Middlewares
-app.use(cors());
+app.use(cors({
+  methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json({ limit: '50mb' }));
